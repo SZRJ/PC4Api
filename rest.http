@@ -1,0 +1,4 @@
+##Try
+GET http://localhost:3000/Departments
+
+DELETE  http://localhost:3000/Users/6730e732b2fadaab3311b4e8

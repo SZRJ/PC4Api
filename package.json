@@ -1,0 +1,19 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "PC4Api",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Marcelo",
+  "license": "ISC",
+  "dependencies": {
+    "api": "file:",
+    "express": "^4.21.1",
+    "http-errors": "^2.0.0",
+    "mongoose": "^8.8.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
