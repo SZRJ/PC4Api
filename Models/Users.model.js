@@ -23,7 +23,7 @@ const UsersSchema= new Schema({
         required: false
     },
     creationDate:{
-        type:String,
+        type:Date,
         required: false
     }
 });
