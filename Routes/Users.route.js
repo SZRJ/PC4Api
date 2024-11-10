@@ -54,7 +54,7 @@ const User = require('../Models/Users.model')
  *                  schema:
  *                   type: array
  *                   items:
- *                     $ref: '#/components/schemas/Users'
+ *                     $ref: '#/components/schemas/User'
  *      
  */
 router.get('/',async (req,res,next)=>{
@@ -139,7 +139,7 @@ router.delete('/:id',async (req,res,next)=>{
  *      application/json:
  *      schema:
  *        type: object
- *        $ref: '#/components/schemas/Message'
+ *        $ref: '#/components/schemas/User'
  *  responses:
  *      200:
  *          description: Usuario Actualizado
