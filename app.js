@@ -1,24 +1,30 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const path = require("path")
-//swagger
+// Importa los módulos necesarios
+const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerUI = require("swagger-ui-express");
-const swaggerJsDoc = require("swagger-jsdoc")
-const swaggerSpec = {
-    definition:{
-        openapi:"3.0.0",
-        info:{
-            title:"PC4 API",
-            version:"1.0.0"
-        },
+const path = require("path");
+
+// Configuración de Swagger
+const swaggerSpec = swaggerJsDoc({
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: "PC4 API",
+      version: "1.0.0",
     },
-    apis: [`${path.join(__dirname,"./routes/*.js")}`],
-};
+  },
+  apis: [`${path.join(__dirname, './routes/*.js')}`], // Asegúrate de que esta ruta sea correcta
+});
+
 
 
 const app = express();
 app.use(express.json());
-app.use("/api-doc", swaggerUI.serve,swaggerUI.setup(swaggerJsDoc(swaggerSpec)))
+// Middleware para servir la documentación de Swagger
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerSpec));
+
 
 mongoose.connect('mongodb://4.228.231.241:27017/',{
     dbName:'DB',
